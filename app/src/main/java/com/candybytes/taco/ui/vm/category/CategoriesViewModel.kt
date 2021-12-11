@@ -1,4 +1,4 @@
-package com.candybytes.taco.ui.vm
+package com.candybytes.taco.ui.vm.category
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject

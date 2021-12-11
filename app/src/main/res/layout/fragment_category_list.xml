@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.candybytes.taco.ui.vm.CategoriesViewModel" />
+            type="com.candybytes.taco.ui.vm.category.CategoriesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

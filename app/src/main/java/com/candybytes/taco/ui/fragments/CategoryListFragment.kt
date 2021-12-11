@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.candybytes.taco.databinding.FragmentCategoryListBinding
-import com.candybytes.taco.ui.vm.CategoriesViewModel
+import com.candybytes.taco.ui.vm.category.CategoriesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
