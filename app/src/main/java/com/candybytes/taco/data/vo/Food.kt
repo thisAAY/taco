@@ -1,4 +1,4 @@
-package com.candybytes.taco.vo
+package com.candybytes.taco.data.vo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -41,5 +41,16 @@ data class Food(
      * List of nutrients
      */
     @SerializedName("attributes")
-    val nutrients: HashMap<String, Nutrient> = hashMapOf()
-)
+    val nutrients: Map<String, Nutrient> = hashMapOf()
+) {
+    fun toModel(): com.candybytes.taco.domain.model.Food {
+        return com.candybytes.taco.domain.model.Food(
+            id,
+            description,
+            baseQty,
+            baseUnity,
+            categoryId,
+            nutrients.mapValues { it.value.toModel() }
+        )
+    }
+}

@@ -3,7 +3,7 @@ package com.candybytes.taco.data.db
 import androidx.room.TypeConverter
 import com.candybytes.taco.ui.util.fromJson
 import com.candybytes.taco.ui.util.toJson
-import com.candybytes.taco.vo.Nutrient
+import com.candybytes.taco.data.db.food.Nutrient
 
 class Converters {
 

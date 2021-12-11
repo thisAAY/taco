@@ -1,10 +1,10 @@
-package com.candybytes.taco.data.db
+package com.candybytes.taco.data.db.food
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.candybytes.taco.vo.Food
+import com.candybytes.taco.data.vo.Food
 
 /**
  * Interface for database access for Food related operations.
