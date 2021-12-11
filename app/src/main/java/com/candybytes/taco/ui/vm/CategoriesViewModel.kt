@@ -6,7 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
-import com.candybytes.taco.api.TacoService
+import com.candybytes.taco.data.api.TacoService
 import timber.log.Timber
 
 class CategoriesViewModel @ViewModelInject constructor(

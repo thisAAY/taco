@@ -1,4 +1,4 @@
-package com.candybytes.taco.api
+package com.candybytes.taco.data.api
 
 import com.candybytes.taco.vo.Category
 import com.candybytes.taco.vo.Food

@@ -1,9 +1,8 @@
 package com.candybytes.taco.di
 
 import android.content.Context
-import com.candybytes.taco.Application
 import com.candybytes.taco.R
-import com.candybytes.taco.api.TacoService
+import com.candybytes.taco.data.api.TacoService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

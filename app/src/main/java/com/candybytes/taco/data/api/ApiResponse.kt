@@ -1,4 +1,4 @@
-package com.candybytes.taco.api
+package com.candybytes.taco.data.api
 
 import retrofit2.Response
 import timber.log.Timber
