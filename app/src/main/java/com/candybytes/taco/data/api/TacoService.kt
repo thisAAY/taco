@@ -1,7 +1,7 @@
 package com.candybytes.taco.data.api
 
-import com.candybytes.taco.vo.Category
-import com.candybytes.taco.vo.Food
+import com.candybytes.taco.data.vo.Category
+import com.candybytes.taco.data.vo.Food
 import retrofit2.http.GET
 import retrofit2.http.Path
 
