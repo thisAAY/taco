@@ -8,9 +8,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
-import javax.inject.Inject
+import javax.inject.Singleton
 
-class CategoryRepository @Inject constructor(
+@Singleton
+class CategoryRepository(
     private val categoryApiClient: CategoryApiClient,
     private val foodDbManger: FoodDbManger,
 ) {

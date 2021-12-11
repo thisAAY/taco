@@ -11,14 +11,15 @@ sealed class CategoriesContract {
     }
 
     data class State(
-        val categories: List<Category>
+        val categories: List<Category>,
+        val isLoading: Boolean,
     ) : ViewState
 
     sealed class Effect : ViewSideEffect {
         data class ErrorMessage(val message: String) : Effect()
 
-        sealed class Navigation : Effect() {
-            data class CategoryScreen(val id: Int) : Navigation()
+        sealed class NavigateTo : Effect() {
+            data class CategoryScreen(val id: Int) : NavigateTo()
         }
     }
 }
