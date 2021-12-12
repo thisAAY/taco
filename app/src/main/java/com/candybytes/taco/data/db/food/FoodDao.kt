@@ -17,9 +17,6 @@ interface FoodDao {
     suspend fun insertAsync(food: Food)
 
     @Query("SELECT * FROM food")
-    suspend fun getAllPageAsync(): PagingSource<Int,Food>
-
-    @Query("SELECT * FROM food")
     suspend fun getAllAsync(): List<Food>
 
 }

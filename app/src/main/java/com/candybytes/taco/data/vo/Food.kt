@@ -41,7 +41,7 @@ data class Food(
      * List of nutrients
      */
     @SerializedName("attributes")
-    val nutrients: Map<String, Nutrient> = hashMapOf()
+    val nutrients: HashMap<String, Nutrient> = hashMapOf()
 ) {
     fun toModel(): com.candybytes.taco.domain.model.Food {
         return com.candybytes.taco.domain.model.Food(

@@ -1,13 +1,15 @@
 package com.candybytes.taco.ui.vm.category
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.viewModelScope
 import com.candybytes.taco.data.repository.CategoryRepository
 import com.candybytes.taco.ui.vm.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CategoriesViewModel @ViewModelInject constructor(
+@HiltViewModel
+class CategoriesViewModel @Inject constructor(
     private val categoryRepository: CategoryRepository
 ) : BaseViewModel<
         CategoriesContract.Event,

@@ -5,9 +5,10 @@ import com.candybytes.taco.domain.model.Food
 import javax.inject.Inject
 
 class FoodDbManger @Inject constructor(
-    private val foodDb: FoodDao
+    private val db: FoodDb,
 ) {
+    private val dao = db.foodDao()
     suspend fun getAllFood(): List<Food> {
-        return foodDb.getAllAsync().map { it.toModel() }
+        return dao.getAllAsync().map { it.toModel() }
     }
 }

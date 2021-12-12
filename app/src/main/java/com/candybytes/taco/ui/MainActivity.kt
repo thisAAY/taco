@@ -44,24 +44,17 @@ class MainActivity : AppCompatActivity() {
             lifecycleOwner = this@MainActivity
             this@MainActivity.bottomNavigation = navBottomBar
 
-            //access navigation controller
-            val navHostFragment =
-                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-            val navController = navHostFragment.navController
-            appBarConfiguration = AppBarConfiguration(navController.graph)
-            challengeTimer()
 
-            //setup header and footer
-            toolbar.setupWithNavController(navController, appBarConfiguration)
-            navBottomBar.setupWithNavController(navController)
+            challengeTimer()
         }
 
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+//        val navController = findNavController(R.id.nav_host_fragment)
+//        return navController.navigateUp(appBarConfiguration)
+//                || super.onSupportNavigateUp()
+        return true
     }
 
     /**
