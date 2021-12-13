@@ -4,15 +4,14 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.MaterialTheme
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupWithNavController
 import com.candybytes.taco.R
 import com.candybytes.taco.databinding.MainActivityBinding
+import com.candybytes.taco.ui.category.CategoriesPage
 import com.candybytes.taco.ui.vm.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,23 +30,40 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     private lateinit var bottomNavigation: BottomNavigationView
-
+    lateinit var binding: MainActivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding: MainActivityBinding =
-            DataBindingUtil.setContentView(this, R.layout.main_activity)
+        binding = DataBindingUtil.setContentView(this, R.layout.main_activity)
+
 
         binding.apply {
             // Specify the current activity as the lifecycle owner.
             viewModel = this@MainActivity.viewModel
             lifecycleOwner = this@MainActivity
             this@MainActivity.bottomNavigation = navBottomBar
-
-
             challengeTimer()
         }
 
+        setupNavigation()
+    }
+
+    private fun setupNavigation() {
+        bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.categoriesFragment -> {
+                    binding.content.apply {
+                        setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+                        setContent {
+                            MaterialTheme {
+                                CategoriesPage()
+                            }
+                        }
+                    }
+                }
+            }
+            true
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
